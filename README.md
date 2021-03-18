@@ -5,6 +5,7 @@
 <ul>
 <li>Python3</li>
 <li>Flask</li>
+<li>MariaDB</li>
 <li>Pytest</li>
 </ul>
 
@@ -27,13 +28,15 @@
 
 <code> pip3 install flask </code>
 
+<code> pip3 install flask-script </code>
+
 <code> pip3 install pytest </code>
 
 3 - Run the app
 
-<p>Go to the app folder and run this commands</p>
+<p>Go to the app folder and run this command</p>
 
-<code> python app.py</code>
+<code> python manage.py runserver</code>
 
 Check http://localhost:5000
 
