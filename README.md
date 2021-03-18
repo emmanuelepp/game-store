@@ -1,4 +1,4 @@
-# Game-store
+# Game store notes
 
 <p><strong>Technologies</strong></p>
 
