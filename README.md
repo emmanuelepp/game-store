@@ -4,9 +4,7 @@
 
 <p>Clone the repository</p>
 
-<pre>
 <code>git@github.com:emmanuelepp/game-store.git </code>
-<pre>
 
 <p><strong>Technologies</strong></p>
 
