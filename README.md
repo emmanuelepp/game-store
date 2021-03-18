@@ -2,5 +2,7 @@
 
 Dependencies
 
-Flask
-Pytest
+<ul>
+<li>Flask</li>
+<li>Pytest</li>
+</ul>
