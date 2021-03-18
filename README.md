@@ -1,14 +1,14 @@
 # game-store
 
-<strong>Instalation</strong>
+<p><strong>Instalation</strong></p>
 
-Clone the repository
+<p>Clone the repository</p>
 
 <pre>
 <code>git@github.com:emmanuelepp/game-store.git </code>
 <pre>
 
-<strong>Technologies</strong>
+<p><strong>Technologies</strong></p>
 
 <ul>
 <li>Flask</li>
