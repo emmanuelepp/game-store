@@ -18,7 +18,7 @@
 
 <p>2 - Install dependencies</p>
 
-<p>Go to the game-store folder and runs those commands</p>
+<p>Open your terminal and go to the game-store folder and runs those commands</p>
 
 <code> python3 -m venv venv </code>
 
