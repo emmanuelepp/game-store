@@ -26,9 +26,11 @@
 
 <code> source venv/bin/activate </code>
 
-<code> pip3 install flask </code>
-
 <code> pip3 install flask-script </code>
+
+<code> pip3 install flask-WTF </code>
+
+<code> pip3 install secrets </code>
 
 <code> pip3 install pytest </code>
 

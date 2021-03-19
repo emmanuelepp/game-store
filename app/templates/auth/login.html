@@ -1,0 +1,31 @@
+{%extends './base.html'%}
+
+{%block title%} {%endblock%}
+
+{%block body %}
+
+{%block customCSS%} 
+<link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+{%endblock%}
+<form class="form-signin" action="./login" method="POST">
+  <input type="hidden" name="csrf_token" value="{{csrf_token()}}" >
+    <img class="mb-4" src="{{url_for('static',filename='img/icon.svg')}}" alt="" width="72" height="72"  >
+    <h1 class="h3 mb-3 font-weight-normal">Game Store</h1>
+    <label for="inputEmail" class="sr-only">User</label>
+    <input type="user" id="inputUser" name ="user" class="form-control" placeholder="User" minlength="6" 
+    maxlength="25" required autofocus>
+    <br/>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="password" name ="password" class="form-control" placeholder="Password" min="8"  required>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+    <p class="mt-5 mb-3 text-muted">&copy; {{date}} </p>
+  </form>
+  {%block customJS%}
+  <script src="{{url_for('static',filename='js/login.js')}}"></script>
+  {%endblock%}
+{%endblock%}
