@@ -1,23 +1,27 @@
 from flask import Flask, request, redirect, url_for, render_template
 from flask_wtf.csrf import CSRFProtect
 import datetime
+import infra
+import pymongo
 
 
 app = Flask(__name__)
 
 csrf = CSRFProtect()
 
-# CSRF protection
+infra = infra
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     date = datetime.datetime.now().strftime('%Y')
     if request.method == 'POST':
-        if request.form['user'] == 'admin' and request.form['password'] == '123456':
+        user_validation = infra.validate_user(
+            request.form['user'], request.form['password'])
+        if user_validation == True:
             return redirect(url_for('index'))
         else:
-            return render_template('auth/login.html')
+            return render_template('auth/login.html', date=date)
     else:
         return render_template('auth/login.html', date=date)
 
@@ -25,6 +29,13 @@ def login():
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+@app.route('/add_user', methods=['POST'])
+def add_user(user, password):
+    infra.create_user(user, password)
+
+    return 'Ok'
 
 
 def page_not_found(error):
