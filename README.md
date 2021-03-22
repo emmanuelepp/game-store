@@ -19,7 +19,7 @@
 
 <p>2 - Install dependencies</p>
 
-<<<<<<< HEAD
+
 <p>Instal mongodb in your docker container</p>
 
 Mongodb on docker (https://phoenixnap.com/kb/docker-mongodb)
@@ -28,9 +28,9 @@ If you have some troubles with the  container (https://stackoverflow.com/questio
 
 
 <p>Go to the game-store folder and runs those commands</p>
-=======
+
 <p>Open your terminal and go to the game-store folder and runs those commands</p>
->>>>>>> fd1c4903f0971f8776a162b9c8a129448e2e5907
+
 
 <code> python3 -m venv venv </code>
 
