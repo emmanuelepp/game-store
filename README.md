@@ -20,8 +20,6 @@
 <p>2 - Install dependencies</p>
 
 
-<p>Instal mongodb in your docker container</p>
-
 Mongodb on docker (https://phoenixnap.com/kb/docker-mongodb)
 
 If you have some troubles with the  container (https://stackoverflow.com/questions/37450871/how-to-allow-remote-connections-from-mongo-docker-container)
