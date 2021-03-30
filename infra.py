@@ -2,9 +2,12 @@ from flask import Flask
 import json
 import bcrypt
 import pymongo
+import logging
 
 # Connect to the data base
 ########################################
+logging.basicConfig(filename='./logs/app.log',
+                    format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
 
 try:
     mongo = pymongo.MongoClient(
@@ -12,7 +15,7 @@ try:
         port=27017,
         serverSelectionTimeOutMS=1000)
     db = mongo.test
-    print("que hay aqui:  " + str(db))
+
     mongo.server_info()
 except Exception as ex:
     print("Error: " + ex)
@@ -32,6 +35,7 @@ def create_user(userName, password):
         }
 
         mongo.test.user.insert(user)
+
     except Exception as ex:
         pass
     return "Ok"
@@ -49,12 +53,24 @@ def validate_user(user, password):
         unhashed = bcrypt.checkpw(password.encode('utf-8'), res)
 
         if unhashed is not True:
-            print("Login error: mail or password invalid")
+            logging.info("Login error: mail or password invalid")
             return False
         else:
-            print("User loged")
+            logging.info("User loged")
             return True
 
     except Exception as ex:
-        pass
+        logging.info("Error: User not loged")
+
     return "Ok"
+
+
+def get_user_by_id(user):
+    # try:
+    #     reponse = mongo.test.user.find_one({'user': user})
+
+    #     return reponse.get('user')
+
+    # except Exception as ex:
+    # return "Ok"
+    pass
